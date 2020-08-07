@@ -1,0 +1,32 @@
+warning: LF will be replaced by CRLF in src/main/resources/application.properties.
+The file will have its original line endings in your working directory
+[1mdiff --git a/src/main/java/com/test/telegrambot/client/Client.java b/src/main/java/com/test/telegrambot/client/Client.java[m
+[1mindex 04e6be3..22d1036 100644[m
+[1m--- a/src/main/java/com/test/telegrambot/client/Client.java[m
+[1m+++ b/src/main/java/com/test/telegrambot/client/Client.java[m
+[36m@@ -1,15 +1,13 @@[m
+ package com.test.telegrambot.client;[m
+ [m
+ import com.test.telegrambot.dto.ResultUpdate;[m
+[31m-import com.test.telegrambot.dto.Update;[m
+ import org.springframework.cloud.openfeign.FeignClient;[m
+ import org.springframework.http.ResponseEntity;[m
+ import org.springframework.web.bind.annotation.GetMapping;[m
+[31m-import org.springframework.web.bind.annotation.ResponseBody;[m
+ [m
+ [m
+ [m
+[31m-@FeignClient(url = "https://api.telegram.org/bot1206975479:AAHriKQuVXB-0nX5hFtLhcKmX-cXpavxnOQ", name= "telegram")[m
+[32m+[m[32m@FeignClient(url = "${telegram.api}${telegram.token}", name= "telegram")[m
+ public interface Client {[m
+ [m
+     @GetMapping("/getUpdates")[m
+[1mdiff --git a/src/main/resources/application.properties b/src/main/resources/application.properties[m
+[1mindex 8b13789..360f6d6 100644[m
+[1m--- a/src/main/resources/application.properties[m
+[1m+++ b/src/main/resources/application.properties[m
+[36m@@ -1 +1,3 @@[m
+ [m
+[32m+[m[32mtelegram.api=[m
+[32m+[m[32mtelegram.token=[m
+\ No newline at end of file[m
