@@ -2,9 +2,18 @@ package com.test.telegrambot.dto;
 
 public class Message {
     private int message_id;
-    private int date;
     private User from;
+    private Chat chat;
+    private int date;
     private String text;
+
+    public Chat getChat() {
+        return chat;
+    }
+
+    public void setChat(Chat chat) {
+        this.chat = chat;
+    }
 
     public User getFrom() {
         return from;
