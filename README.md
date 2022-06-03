@@ -1,2 +1,2 @@
 # telegrambot
-Uma api usando o bot do telegram
+An basic API using telegrambot [BotFather](https://core.telegram.org/bots)
